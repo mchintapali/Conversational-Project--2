@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech-to-Text and Text-to-Speech Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Speech and Text Conversion</h1>
+
+        <!-- Section for recording audio -->
+        <section class="audio-section">
+            <h2>Record Your Audio</h2>
+            <button id="record-btn">Start Recording</button>
+            <button id="stop-btn" disabled>Stop Recording</button>
+            <p id="recording-status">Not recording...</p>
+
+            <!-- Transcription will be displayed here -->
+            <h3>Transcription</h3>
+            <textarea id="transcription-text" readonly>Wait for 5 sec before start talking</textarea>
+
+            <!-- Sentiment Results -->
+            <h3>Sentiment Analysis</h3>
+            <p id="sentiment-score">Sentiment Score: N/A</p>
+            <p id="sentiment-magnitude">Sentiment Magnitude: N/A</p>
+            <p id="sentiment-result">Sentiment Result: N/A</p>
+
+        </section>
+
+
+
+        <!-- Section for uploading audio files -->
+        <section class="upload-section">
+            <h2>Upload Audio File</h2>
+            <input type="file" id="audio-file-input" accept="audio/*">
+            <button id="upload-btn">Upload Audio</button>
+        </section>
+
+        <!-- Section for text-to-speech -->
+        <section class="tts-section">
+            <h2>Convert Text to Speech</h2>
+            <textarea id="text-input" placeholder="Enter text here..."></textarea>
+            <button id="tts-btn">Convert to Speech</button>
+
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
